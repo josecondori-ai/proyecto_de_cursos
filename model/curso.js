@@ -55,8 +55,12 @@ const CursoSchema=new mongoose.Schema({
     },
     careers:{
         type:[String],
+
+
         require:true,
         enum:['Web Development','Mobile Development','UI/UX','Data Science','Business','Other']
+       
+
 
     },
     averageRating:{

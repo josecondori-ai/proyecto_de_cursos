@@ -9,3 +9,5 @@ router.route('/').get(getCursos).post(postCurso)
 router.route('/:id').get(getCurso).put(updateCurso).delete(eliminarCurso)
 
 module.exports=router
+
+// http://localhost:4500/api/v1/cursos/

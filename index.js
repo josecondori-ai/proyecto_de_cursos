@@ -2,12 +2,13 @@ const express=require('express')
 const dotenv=require('dotenv')
 const morgan=require('morgan')
 const colors=require('colors')
-
+const cookieParser=require('cookie-parser')
 const connectDB=require('./config/db')
 
 
 //rutas de cursos
 const cursos=require('./routes/cursos')
+const auth=require('./routes/auth')
 
 dotenv.config({path:'./config/.env'})
 
@@ -18,12 +19,16 @@ const app=express()
 
 app.use(express.json())
 
+//cookie parser
+app.use(cookieParser())
+
 //configurar morgan
 app.use(morgan('dev'))
 
 //montar una ruta
 
 app.use('/api/v1/cursos',cursos)
+app.use('/api/v1/auth',auth)
 
 app.get('/',(req,res)=>{
     res.send('soy el home')

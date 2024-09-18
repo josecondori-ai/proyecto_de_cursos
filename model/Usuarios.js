@@ -1,4 +1,9 @@
 const mongoose=require('mongoose')
+const bcrypt=require('bcrypt')
+const jwt=require('jsonwebtoken')
+
+
+
 const UsuariosSchema=new mongoose.Schema({
     name:{
         type:String,
@@ -44,6 +49,18 @@ UsuariosSchema.pre('save',async function(){
 
     //password= await bcrypt.hash(password,10)
 })
+
+
+UsuariosSchema.methods.getSignedJwtToken=function(){
+    return jwt.sign({id:this._id},process.env.JWT_SECRET,{
+        expiresIn:process.env.JWT_EXPIRE
+    })
+
+}
+
+UsuariosSchema.methods.matchPassword=async function(passwordformulario){
+    return await bcrypt.compare(passwordformulario,this.password)
+}
 
 
 
