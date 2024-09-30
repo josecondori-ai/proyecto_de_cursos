@@ -1,0 +1,25 @@
+<%- include('./partials/head')%>
+
+<% cursos.forEach(curso=>{ %>
+
+    <ul>
+        <li><%=curso.name %></li>
+    </ul>
+
+<%})%>
+
+<div>
+    <p>Filtrado</p>
+
+    <p>rating</p>
+    <select>
+        <option value="">1 estrella</option>
+        <option value="">2 estrellas</option>
+
+    </select>
+    
+
+    <button>Filtrar</button>
+</div>
+
+<%- include('./partials/footer')%>

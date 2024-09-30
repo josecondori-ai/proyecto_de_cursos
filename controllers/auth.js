@@ -7,15 +7,15 @@ const Usuario=require('../model/Usuarios')
 //@access Publico
 
 
-// exports.getRegistrar=async(req,res,next)=>{
-//     try{
-//         //res.render(register)
-//         res.status(200).json({resultado:true,mensaje:'muestro la pagina de registro',datos:cursos})            
-//     }catch(error){
-//         res.status(400).json({mensaje:'no funciono'})
+exports.getRegistrar=async(req,res,next)=>{
+    try{
+        res.render('register')
+        // res.status(200).json({resultado:true,mensaje:'muestro la pagina de registro',datos:cursos})            
+    }catch(error){
+        res.status(400).json({mensaje:'no funciono'})
 
-//     }
-// }
+    }
+}
 
 
 
@@ -50,16 +50,16 @@ exports.postRegistrar=async(req,res,next)=>{
 //@access Publico
 
 
-// exports.getLogin=async(req,res,next)=>{
-//     try{
-//         //res.render(login)
+exports.getLogin=async(req,res,next)=>{
+    try{
+        res.render('login')
 
-//         res.status(200).json({resultado:true,mensaje:'muestro la pagina de login',datos:cursos})            
-//     }catch(error){
-//         res.status(400).json({mensaje:'no funciono'})
+        // res.status(200).json({resultado:true,mensaje:'muestro la pagina de login',datos:cursos})            
+    }catch(error){
+        res.status(400).json({mensaje:'no funciono'})
 
-//     }
-// }
+    }
+}
 
 
 //@desc   ENVIAR login Usuario

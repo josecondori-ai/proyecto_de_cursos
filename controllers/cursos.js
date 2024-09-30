@@ -11,7 +11,11 @@ exports.getCursos=async(req,res,next)=>{
 try{
     
    let cursos= await Cursos.find()
-   res.status(200).json({resultado:true,mensaje:'VER  cursos',datos:cursos})
+
+console.log(cursos)
+res.render('todosloscursos',{cursos})
+
+//    res.status(200).json({resultado:true,mensaje:'VER  cursos',datos:cursos})
 }catch(error){
     
     res.status(400).json({mensaje:'no funciono'})
